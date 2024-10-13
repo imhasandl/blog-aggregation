@@ -1,0 +1,24 @@
+package main
+
+import (
+	"fmt"
+	"log"
+
+	"module/internal/config"
+)
+
+func main(){
+	cfg, err := config.Read()
+	if err != nil {
+		log.Fatalf("error handling config: %v", err) 
+	}
+	fmt.Printf("Read Config: %+v\n", cfg)
+
+	err = cfg.SetUser("Hasan")
+
+	cfg, err = config.Read()
+	if err != nil {
+		log.Fatalf("error reading config: %v", err)
+	}
+	fmt.Printf("Read config again: %+v\n", cfg)
+}

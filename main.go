@@ -3,9 +3,14 @@ package main
 import (
 	"fmt"
 	"log"
+	"os"
 
 	"module/internal/config"
 )
+
+type state struct {
+	cfg *config.Config
+}
 
 func main(){
 	cfg, err := config.Read()

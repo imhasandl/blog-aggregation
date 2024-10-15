@@ -7,7 +7,7 @@ import (
 
 )
 
-const configFileName = ".gatorconfig.json"
+const configFileName = `OneDrive\Рабочий стол\blog\gatorconfig.json`
 
 type Config struct {
 	DBURL           string `json:"db_url"`
@@ -49,6 +49,7 @@ func getConfigFilePath() (string, error) {
 	pathName := filepath.Join(home, configFileName)
 	return pathName, nil 
 }
+
 func write(cfg Config) error {
 	fullPath, err := getConfigFilePath()
 	if err != nil {

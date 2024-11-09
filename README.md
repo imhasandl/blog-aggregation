@@ -93,6 +93,19 @@ SELECT version();
 
 If everything is working, you can move on. You can type exit to leave the psql shell.
 
+# Test your connection string by running psql, for example:
+
+psql "protocol://username:password@host:port/database"
+
+cd into the sql/schema directory and run:
+
+goose postgres <connection_string> up
+
+Run your migration! Make sure it works by using psql to find your newly created users table:
+
+psql gator
+\dt
+
 
 
 

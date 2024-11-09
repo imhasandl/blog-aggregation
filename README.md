@@ -107,6 +107,21 @@ psql gator
 \dt
 
 
+# Test the register command by running it with a name:
+
+`go run . register lane`
+
+Use psql to verify that the user was created:
+
+`Mac: psql postgres`
+
+`Linux: sudo -u postgres psql`
+
+`\c gator`
+
+`SELECT * FROM users;`
+
+
 
 
 

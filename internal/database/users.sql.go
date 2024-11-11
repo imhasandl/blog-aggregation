@@ -102,8 +102,8 @@ func (q *Queries) GetUsers(ctx context.Context) ([]User, error) {
 	if err != nil {
 		return nil, err
 	} 
-
 	defer rows.Close()
+
 	var items []User
 	for rows.Next() {
 		var i User

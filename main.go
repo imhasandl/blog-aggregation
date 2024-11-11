@@ -9,6 +9,7 @@ import (
 
 	"github.com/imhasandl/blog-aggregator/internal/config"
 	"github.com/imhasandl/blog-aggregator/internal/database"
+
 	_ "github.com/lib/pq"
 )
 
@@ -49,6 +50,7 @@ func main() {
 	cmds.register("follow", middlewareLoggedIn(handlerFollow))
 	cmds.register("following", middlewareLoggedIn(handlerListFeedFollows))
 	cmds.register("unfollow", middlewareLoggedIn(handlerUnfollow))
+	cmds.register("browse", middlewareLoggedIn(handlerBrowse))
 
 	if len(os.Args) < 2 {
 		fmt.Println("Usage: cli <command> [args...]")
